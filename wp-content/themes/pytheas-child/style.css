@@ -123,7 +123,7 @@ body { background-color: #E8E7DE; }
 #home-slider-wrap .small-text { margin: 0; color: #FFF; font: bold 14px "Century Gothic",Tahoma; padding: 2px; background-image: url("images/slideshow-smalltext-bg.png"); display: inline; }
 #home-slider-wrap .small-text a { color: inherit !important; }
 #home-slider-wrap .small-text a:hover { text-decoration: none; }
-#home-slider-wrap .right-box { background-image: url("images/slideshow-rightbox.png"); width: 307px; height: 202px; position: absolute; right: 0; top: 82px; }
+#home-slider-wrap .right-box { background-image: url("images/slideshow-rightbox.png"); width: 307px; height: 220px; position: absolute; right: 0; top: 82px; background-size: 100% 100%; }
 #home-slider-wrap .right-box h3 { margin: 15px 0px 4px 49px; font: 25px "Century Gothic",Tahoma; color: #FFF; }
 #home-slider-wrap .right-box .rightbox-text { margin-left: 49px; color: #FFF; }
 #home-slider-wrap .right-box .rightbox-text a { color: inherit !important; text-decoration: underline; display: block; height: 16px; }
@@ -196,14 +196,16 @@ body { background-color: #E8E7DE; }
 /* Mobile phones */
 @media screen and (max-width: 460px) {
 	.menu-social-networks-container, .menu-top-menu-container, #header-language,
-	#header-slogan, #main-navigation, #donate-now, #home-slider-wrap .flex-caption,
-	#home-slider-wrap .right-box, #find-location, #frontpage-right .bucket p, #secondary,
-	#contact-information .contact-logo, #footer-links .menu-main-menu-container { display: none; }
+	#header-slogan, #main-navigation, #donate-now, #home-slider-wrap .right-box, #find-location,
+	#frontpage-right .bucket p, #secondary, #contact-information .contact-logo,
+	#footer-links .menu-main-menu-container { display: none; }
 	#header-search .form-submit { display: inline-block; padding: 0; width: 15px; background-position: -26px; }
 	#mobile-menu-wrapper { display: inline; }
 	#mobile-menu-wrapper .mobile-menu-icon { display: inline-block; }
 	#find-location-mobile { display: block; }
 	#find-location-mobile .form-submit { width: 10px; background-position: -20px center; }
+	#home-slider-wrap .big-text { font-size: 42px; line-height: 34px; }
+	#home-slider-wrap .medium-text { font-size: 22px; line-height: 20px; }
 	#wrap { max-width: 100%; }
 	#main { padding: 9px 0; }
 	#primary { width: 92%; margin: 0 4%; }
