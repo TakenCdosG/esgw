@@ -50,6 +50,7 @@ body { background-color: #E8E7DE; }
 #main-navigation-wrapper .logo { width: 175px; height: 128px; margin: 0 16px 0 15px; }
 #main-navigation-wrapper:after { content: ""; display: block; clear: both; }
 #header-slogan { width: 74%; max-width: 731px; height: 83px; background: url("images/slogan.jpg") no-repeat 27px center; background-size: 88% auto; }
+#donate-now-mobile { display: none; }
 #main-navigation { width: 680px; }
 #main-navigation .menu { border-top: 1px dotted #8B8B8B; }
 #main-navigation .menu .menu-item { display: block; float: left; padding: 8px 0 15px 15px; }
@@ -204,6 +205,7 @@ body { background-color: #E8E7DE; }
 	#mobile-menu-wrapper .mobile-menu-icon { display: inline-block; }
 	#find-location-mobile { display: block; }
 	#find-location-mobile .form-submit { width: 10px; background-position: -20px center; }
+	#donate-now-mobile { display: block; float: left; width: 130px; margin: 14px 0 0 22px; }
 	#home-slider-wrap .big-text { font-size: 42px; line-height: 34px; }
 	#home-slider-wrap .medium-text { font-size: 22px; line-height: 20px; }
 	#wrap { max-width: 100%; }
