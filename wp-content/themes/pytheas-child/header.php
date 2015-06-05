@@ -99,6 +99,9 @@
 				</div>
 			</form>
 		</div>
+		<div id="donate-now-mobile">
+			<a href="/donate/donate-now"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/donate-now.png" alt="Donate Now"></a>
+		</div>
 	</div>
 
 	<div id="wrap" class="container clr">
