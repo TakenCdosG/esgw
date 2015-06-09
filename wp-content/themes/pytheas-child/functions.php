@@ -26,6 +26,12 @@ add_filter('excerpt_length', 'custom_excerpt_length');
 
 add_filter('upload_mimes', 'pixert_upload_swf');
 
+// Hooking up function to create the Jobs post type
+add_action( 'init', 'create_jobs_posttype' );
+
+// Shortcode generator for the Job Posting page
+add_shortcode( 'jobs-posts', 'build_jobs_posts' );
+
 wp_enqueue_script('mobile-script', get_stylesheet_directory_uri() .'/js/mobile-script.js', array('jquery'), '1.0');
 
 function join_for_filter_by_category($cat) {
@@ -50,3 +56,52 @@ function pixert_upload_swf($existing_mimes) {
 	return $existing_mimes;
 }
 /* allow upload flash */
+
+function create_jobs_posttype() {
+
+	register_post_type( 'jobs',
+	// CPT Options
+		array(
+			'labels' => array(
+				'name' => __( 'Jobs' ),
+				'singular_name' => __( 'Job' )
+			),
+			'supports' => array( 'title', 'editor', 'author', 'revisions', 'custom-fields', ),
+			'public' => true,
+			'show_in_admin_bar' => true,
+			'has_archive' => true,
+			'capability_type' => 'post',
+			'rewrite' => array('slug' => 'jobs'),
+		)
+	);
+}
+
+// Shortcode: [jobs-posts]
+function build_jobs_posts($attr) {
+	$structure = '<div id="jobs-posts-wrapper"><div class="jobs-posts">';
+	
+	// The Query
+	$args = array(
+		'post_type' => 'jobs',
+		'order' => 'DESC',
+		'orderby' => 'date'
+	);
+	$the_query = new WP_Query( $args );
+	
+	// The Loop
+	if ( $the_query->have_posts() ) {
+		while ( $the_query->have_posts() ) {
+			$the_query->the_post();
+			$structure .= '<div class="job-post">';
+			$structure .= '<h3 class="job-title">' . get_the_title() . '</h3>';
+			$structure .= '<div class="job-content">' . get_the_excerpt() . '</div>';
+			$structure .= '<div class="read-more"><a href="' . get_permalink() . '">READ MORE></a></div>';
+			$structure .= '</div>';
+		}
+	}
+	/* Restore original Post Data */
+	wp_reset_postdata();
+	$structure .= '</div></div>';
+	
+	return $structure;
+}
