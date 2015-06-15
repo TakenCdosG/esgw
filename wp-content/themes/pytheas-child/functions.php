@@ -70,7 +70,7 @@ function create_jobs_posttype() {
 			'public' => true,
 			'show_in_admin_bar' => true,
 			'has_archive' => true,
-			'capability_type' => 'post',
+			'capability_type' => 'page',
 			'rewrite' => array('slug' => 'jobs'),
 		)
 	);

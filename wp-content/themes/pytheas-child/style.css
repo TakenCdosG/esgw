@@ -88,9 +88,23 @@ body { background-color: #E8E7DE; }
 #wrap { margin-top: 0; }
 #main { padding: 9px; }
 #secondary { padding-left: 0; background: url("images/body-left-gradient.jpg") repeat-x; height: 705px; }
+#sidebar-navigation .menu > .menu-item, #sidebar-navigation .menu > .current-menu-parent > a,
+#sidebar-navigation .menu > .current-menu-item > a, #sidebar-navigation .menu > .current-menu-ancestor > a,
+#sidebar-navigation .menu .sub-menu .sub-menu { display: none; }
+#sidebar-navigation .menu-item.current-menu-parent, #sidebar-navigation .menu-item.current-menu-item, #sidebar-navigation .menu-item.current-menu-ancestor, #sidebar-navigation .sub-menu { display: block; }
+#sidebar-navigation .sub-menu > .menu-item { margin: 0 0 10px 0; }
+#sidebar-navigation .sub-menu > .menu-item > a { color: #787576; font: bold 14px "Century Gothic",Tahoma; text-decoration: none; padding: 4px 6px 4px 10px; display: block; }
+#sidebar-navigation .sub-menu > .menu-item.current-menu-item > a, #sidebar-navigation .sub-menu > .menu-item.current-menu-ancestor > a { color: #FFF; background-color: #A73B1F; }
+#sidebar-navigation .sub-menu > .menu-item.current-menu-item > .sub-menu, #sidebar-navigation .sub-menu > .menu-item.current-menu-ancestor > .sub-menu { display: block; }
+#sidebar-navigation .sub-menu > .menu-item > .sub-menu > .menu-item { margin: 0; background-color: #FFF; }
+#sidebar-navigation .sub-menu > .menu-item > .sub-menu > .menu-item a { font-size: 12px; color: #787576; background-color: transparent; }
+#sidebar-navigation .sub-menu > .menu-item > .sub-menu > .menu-item.current-menu-item a { color: #A73B1F; }
+.single-jobs #sidebar-navigation .menu-item-90, .single-jobs #sidebar-navigation .menu-item-90 > .sub-menu { display: block;  }
+.single-jobs #sidebar-navigation .menu-item-90 > a { display: none; }
 #main .page-header { padding: 0; margin-bottom: 8px; border-bottom: 0; }
-#main .page-header-title { font: 40px/40px "Century Gothic",Tahoma; color: #A73B1F; text-transform: capitalize; padding-left: 6px; }
+#main .page-header-title { font: 40px/40px "Century Gothic",Tahoma; color: #A73B1F; text-transform: capitalize; padding-left: 6px; max-width: 78%; }
 #donate-now { position: absolute; right: 18px; top: 6px; }
+.post-navigation { position: relative; }
 #page-featured-img { margin: 0 0 25px -2.6%; }
 #content h2 { font: normal 25px "Century Gothic",Tahoma; color: #A73B1F; }
 #content p { text-align: justify; line-height: 16px; }

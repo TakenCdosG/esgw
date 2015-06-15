@@ -1,7 +1,7 @@
 <?php
 
 /*
-Template Name: Subpage
+Template Name: Events Calendar
 
 Template file for the pages of the second level navigation
 */
@@ -9,26 +9,7 @@ get_header(); ?>
 
 	<?php if (!is_front_page()) { ?>
 		<header class="page-header">
-			<?php
-				$items = wp_get_nav_menu_items('Main menu');
-				$current_id = get_the_ID();
-				$current_ancestor = null;
-				foreach ($items as $menu_item) {
-					if ($menu_item->object_id == $current_id) {
-						$current_ancestor = $menu_item;
-						break;
-					}
-				}
-				while ($current_ancestor->menu_item_parent != 0) {
-					foreach ($items as $menu_item) {
-						if ($current_ancestor->menu_item_parent == $menu_item->db_id) {
-							$current_ancestor = $menu_item;
-							break;
-						}
-					}
-				}
-			?>
-			<h1 class="page-header-title"><?php echo $current_ancestor->title; ?></h1>
+			<h1 class="page-header-title">Events</h1>
 			<div id="donate-now">
 				<a href="/donate/donate-now"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/donate-now.jpg" alt="Donate Now"></a>
 			</div>

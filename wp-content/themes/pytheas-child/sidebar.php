@@ -15,6 +15,9 @@
 			<div class="widget-area">
 				<?php dynamic_sidebar( 'sidebar' ); ?>
 			</div>
+			<div id="sidebar-navigation">
+				<?php wp_nav_menu(array('menu' => 'Main menu')); ?>
+			</div>
 		</div>
 	</div><!-- #secondary -->
 <?php } ?>
