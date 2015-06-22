@@ -9,17 +9,25 @@
 
 get_header(); ?>
 
+<header class="page-header">
+	<h1 class="page-header-title"><?php the_title(); ?></h1>
+	<div id="donate-now">
+		<a href="/donate/donate-now"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/donate-now.jpg" alt="Donate Now"></a>
+	</div>
+</header>
+
+<?php get_sidebar(); ?>
+
 <?php while ( have_posts() ) : the_post(); ?>
 
-	<header class="page-header">
-		<h1 class="page-header-title"><?php the_title(); ?></h1>
+	<div class="post-navigation">
 		<nav class="single-nav clr"> 
 			<?php next_post_link('<div class="single-nav-left">%link</div>', '<span class="fa fa-chevron-left"></span>', false); ?>
 			<?php previous_post_link('<div class="single-nav-right">%link</div>', '<span class="fa fa-chevron-right"></span>', false); ?>
 		</nav><!-- .page-header-title --> 
-	</header><!-- .page-header -->
+	</div>
 	
-	<div id="primary" class="content-area span_16 col clr clr-margin">
+	<div id="primary" class="content-area span_19 col clr">
 		<div id="content" class="site-content" role="main">
 			<?php if ( !post_password_required() ) { ?>
 				<ul class="meta single-meta clr">
@@ -48,15 +56,9 @@ get_header(); ?>
 			if ( of_get_option('blog_bio', '1' ) && get_the_author_meta( 'description' ) ) { ?>
 				<?php get_template_part( 'author-bio' ); ?>
 			<?php } ?>
-			<?php
-			// Related posts
-			if ( of_get_option('blog_related', '1' ) ) { ?>
-				<?php get_template_part( 'content', 'related-posts' ); ?>
-			<?php } ?>
 			<?php comments_template(); ?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 
 <?php endwhile; ?>
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

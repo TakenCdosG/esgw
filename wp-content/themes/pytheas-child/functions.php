@@ -31,6 +31,8 @@ add_action( 'init', 'create_jobs_posttype' );
 
 // Shortcode generator for the Job Posting page
 add_shortcode( 'jobs-posts', 'build_jobs_posts' );
+// Shortcode generator for the News media page
+add_shortcode( 'news-media', 'build_news_media' );
 
 wp_enqueue_script('mobile-script', get_stylesheet_directory_uri() .'/js/mobile-script.js', array('jquery'), '1.0');
 
@@ -95,6 +97,34 @@ function build_jobs_posts($attr) {
 			$structure .= '<div class="job-post">';
 			$structure .= '<h3 class="job-title">' . get_the_title() . '</h3>';
 			$structure .= '<div class="job-content">' . get_the_excerpt() . '</div>';
+			$structure .= '<div class="read-more"><a href="' . get_permalink() . '">READ MORE></a></div>';
+			$structure .= '</div>';
+		}
+	}
+	/* Restore original Post Data */
+	wp_reset_postdata();
+	$structure .= '</div></div>';
+	
+	return $structure;
+}
+
+// Shortcode: [news-media]
+function build_news_media($attr) {
+	$structure = '<div id="news-media-wrapper"><div class="news-media">';
+	
+	// The Query
+	$args = array(
+		'order' => 'DESC',
+		'orderby' => 'date'
+	);
+	$the_query = new WP_Query( $args );
+	
+	// The Loop
+	if ( $the_query->have_posts() ) {
+		while ( $the_query->have_posts() ) {
+			$the_query->the_post();
+			$structure .= '<div class="news">';
+			$structure .= '<h3 class="news-title">' . get_the_title() . '</h3>';
 			$structure .= '<div class="read-more"><a href="' . get_permalink() . '">READ MORE></a></div>';
 			$structure .= '</div>';
 		}

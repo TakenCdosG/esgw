@@ -74,8 +74,8 @@ get_header(); ?>
 										<?php if( get_field( "slide_submenu" ) ): ?>
 											<div class="right-box">
 												<?php
-													// This items are from the Main menu, so no need to store the selected menu, or at least not yet
-													$items = wp_get_nav_menu_items( 'main-menu' );
+													// This items are from the Home slides menu, so no need to store the selected menu, or at least not yet
+													$items = wp_get_nav_menu_items( 'home-slides' );
 													foreach ( $items as $item ) {
 														if ($item->ID == get_field( "slide_submenu" )) {
 															print "<h3>" . $item->title . "</h3>";
@@ -126,17 +126,18 @@ get_header(); ?>
 						<?php endforeach; ?>
 					</div>
 					<div id="find-location" class="span_10 col clr">
-						<form action="/location-result-search" method="post">
-							<label for="zip " class=""> Find a Location</label>
+						<!--<form action="/location-result-search" method="post">
 							<div class="form-item">
 								<input class="form-text" value="" id="zip" name="postal_code" type="text" placeholder="Enter your city or zip" />
 								<button type="submit" accesskey="" class="form-submit" name="op">
 									<span class="hidden">Search</span>
 								</button>
 							</div>
-							<p><a href="/shop/retail-stores-0">See All Retail Stores</a></p>
-							<p><a href="/donate/donation-centers-donation-bins">See All Donation Centers</a></p>
-						</form>
+						</form>-->
+						<label for="zip " class="">Find a Location</label>
+						<?php echo do_shortcode('[gmw form="2"]'); ?>
+						<p><a href="/shop/retail-stores-0">See All Retail Stores</a></p>
+						<p><a href="/donate/donation-centers-donation-bins">See All Donation Centers</a></p>
 					</div>
 				</div>
 				<div id="frontpage-right" class="span_12 col clr"><?php print $buckets; ?></div>

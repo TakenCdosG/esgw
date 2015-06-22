@@ -43,16 +43,11 @@
 					</select>
 				</div>
 				<div id="header-search">
-					<form action="/" accept-charset="UTF-8" method="post" id="search-block-form">
+					<form action="<?php bloginfo('url');?>" accept-charset="UTF-8" method="get" id="search-block-form">
 						<div>
 							<div class="container-inline">
-								<div class="form-item" id="edit-search-block-form-1-wrapper">
-									<label for="edit-search-block-form-1" class="hidden">Search this site: </label>
-									<input maxlength="128" name="search_block_form" id="edit-search-block-form-1" size="15" value="search" title="Enter the terms you wish to search for." class="form-text" type="text">
-								</div>
+								<?php get_search_form(); ?>
 								<input name="op" id="edit-submit-1" value="Search" class="form-submit" type="submit">
-								<input name="form_build_id" id="form-3ON5LUUAdHJvXAaMFa6rhhvLAKLk22N2dOF8iu4JSeg" value="form-3ON5LUUAdHJvXAaMFa6rhhvLAKLk22N2dOF8iu4JSeg" type="hidden">
-								<input name="form_id" id="edit-search-block-form" value="search_block_form" type="hidden">
 							</div>
 						</div>
 					</form>
@@ -89,7 +84,7 @@
 			<?php wp_nav_menu( array('menu' => 'Main menu', 'depth' => 1)); ?>
 		</div>
 		<div id="find-location-mobile">
-			<form action="/location-result-search" method="post">
+			<!--<form action="/location-result-search" method="post">
 				<label for="zip " class=""> Find a Location</label>
 				<div class="form-item">
 					<input class="form-text" value="" id="zip" name="postal_code" type="text" placeholder="Enter your city or zip" />
@@ -97,7 +92,9 @@
 						<span class="hidden">Search</span>
 					</button>
 				</div>
-			</form>
+			</form>-->
+			<label for="zip " class="">Find a Location</label>
+			<?php echo do_shortcode('[gmw form="2"]'); ?>
 		</div>
 		<div id="donate-now-mobile">
 			<a href="/donate/donate-now"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/donate-now.png" alt="Donate Now"></a>
