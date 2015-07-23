@@ -34,6 +34,10 @@ body { background-color: #E8E7DE; }
 #menu-top-menu > .menu-item a { color:#FFFFFF; font: bold 13px/16px "Century Gothic"; vertical-align: top; }
 #menu-top-menu > .menu-item a:before { content: "|"; padding-right: 3px; }
 #menu-top-menu > .menu-item a:hover { text-decoration: none; }
+#menu-top-menu > .menu-item > .sub-menu { position: absolute; background-color: #6CA043; }
+#menu-top-menu > .menu-item > .sub-menu > .menu-item { padding: 0 5px 0 3px; }
+#menu-top-menu > .menu-item > .sub-menu > .menu-item a:before { content: ''; }
+#menu-top-menu > .menu-item.menu-item-50:hover > .sub-menu { display: block; }
 #header-language { margin-left: 12px; width: 140px; }
 #header-language select { height: 18px; font-size: 10px; vertical-align: top; width: 90%; }
 #header-search #edit-search-block-form-1-wrapper { display: inline-block; }
@@ -135,6 +139,7 @@ body { background-color: #E8E7DE; }
 #home-slider-wrap { margin: 0; }
 #home-slider-wrap .flex-caption { background-color: transparent; top: 50%; }
 #home-slider-wrap .flex-direction-nav { display: none; }
+#home-slider-wrap .flex-control-nav { bottom: 10px; }
 #home-slider-wrap .green .big-text, #home-slider-wrap .green .medium-text { color: #66923E; }
 #home-slider-wrap .big-text { font: bold 88px/74px "Century Gothic",Tahoma; }
 #home-slider-wrap .medium-text { font: bold 40px/44px "Century Gothic",Tahoma; margin: 0; }
@@ -151,12 +156,14 @@ body { background-color: #E8E7DE; }
 #frontpage-left .red-text { font: normal 15px "Century Gothic",Tahoma; color: #A73B1F; }
 #news-preview { padding-left: 20px; color: #787576; }
 #news-preview h3 { font: 24px "Century Gothic",Tahoma; border-bottom: 1px solid #787576; color: #787576; margin: 0px 0px 3px; }
-#find-location .gmw-form-wrapper:after { display: block; content: ''; clear: both; }
+#find-location .gmw-form-wrapper:after, #find-location-mobile .gmw-form-wrapper:after { display: block; content: ''; clear: both; }
 #find-location label, #find-location-mobile label { font: bold 16px "Century Gothic",Tahoma; color: #A73B1F; padding-bottom: 3px; display: block; }
 #find-location .gmw-address, #find-location-mobile .gmw-address { width: 114px; height: 18px; float: left; margin: 0 3px 0 0; color: #A5A0A0; font-size: 14px; padding: 3px; }
+#find-location-mobile .gmw-address { width: 98px; }
+#find-location .gmw-submit-wrapper, #find-location-mobile .gmw-submit-wrapper { display: inline-block; }
 #find-location .gmw-submit, #find-location-mobile .gmw-submit { background: url("images/search-btn.png") no-repeat 0 4px; width: 30px; height: 18px; float: left; border: medium none; padding: 0; text-indent: -9999px; }
-#find-location .gmw-unit-distance-wrapper { margin: 0; }
-#find-location .gmw-radius-dropdown-wrapper, #find-location .gmw-units-dropdown-wrapper { margin: 0; }
+#find-location .gmw-unit-distance-wrapper, #find-location .gmw-radius-dropdown-wrapper, #find-location .gmw-units-dropdown-wrapper, #find-location div.clear,
+#find-location-mobile .gmw-unit-distance-wrapper, #find-location-mobile .gmw-radius-dropdown-wrapper, #find-location-mobile .gmw-units-dropdown-wrapper, #find-location-mobile div.clear { display: none; }
 #find-location p { margin-bottom: 0; }
 #find-location a { color: #4D4C50; font-size: 11px; text-decoration: underline; }
 #find-location-mobile { display: none; float: left; margin-left: 7%; }
@@ -245,7 +252,7 @@ body { background-color: #E8E7DE; }
 	#frontpage-right .bucket-yellow { border-top-color: #658E44; }
 	#post-72 .symple-box { height: 150px; }
 	#post-269 object { height: 180px; }
-    li#menu-item-50,li#menu-item-17{display: none !important;}
+    li#menu-item-50,li#menu-item-715,li#menu-item-113{display: none !important;}
     ul#menu-top-menu > .menu-item a:before { content: ""; padding-right: 0px; }
     #menu-top-menu .menu-item-10 { width: 88px; }
 }
