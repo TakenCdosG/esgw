@@ -103,6 +103,7 @@ body { background-color: #E8E7DE; }
 #sidebar-navigation .sub-menu > .menu-item > .sub-menu > .menu-item { margin: 0; background-color: #FFF; }
 #sidebar-navigation .sub-menu > .menu-item > .sub-menu > .menu-item a { font-size: 12px; color: #787576; background-color: transparent; }
 #sidebar-navigation .sub-menu > .menu-item > .sub-menu > .menu-item.current-menu-item a { color: #A73B1F; }
+#sidebar-navigation .menu-top-menu-container { display: block; }
 .single-jobs #sidebar-navigation .menu-item-90, .single-jobs #sidebar-navigation .menu-item-90 > .sub-menu { display: block;  }
 .single-jobs #sidebar-navigation .menu-item-90 > a { display: none; }
 #main .page-header { padding: 0; margin-bottom: 8px; border-bottom: 0; }

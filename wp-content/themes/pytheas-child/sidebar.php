@@ -16,7 +16,14 @@
 				<?php dynamic_sidebar( 'sidebar' ); ?>
 			</div>
 			<div id="sidebar-navigation">
-				<?php wp_nav_menu(array('menu' => 'Main menu')); ?>
+				<?php //If you find a better way to do this, please do it ?>
+				<?php $ids = array(100, 849, 990, 868); //IDs of the pages under News/Media menu ?>
+				<?php $current_post_id = get_the_ID(); ?>
+				<?php if (array_search($current_post_id, $ids) !== FALSE): ?>
+					<?php wp_nav_menu(array('menu' => 'Top menu')); ?>
+				<?php else: ?>
+					<?php wp_nav_menu(array('menu' => 'Main menu')); ?>
+				<?php endif; ?>
 			</div>
 			<?php $allowed_pages = array(718, 720, 722, 724, 726, 728, 730, 732, 734, 736, 738, 740, 742, 744, 746); ?>
 			<?php if (array_search(get_the_ID(), $allowed_pages) !== FALSE): ?>
