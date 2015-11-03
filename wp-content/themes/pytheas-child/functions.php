@@ -88,6 +88,10 @@ function build_jobs_posts($attr) {
 		'order' => 'DESC',
 		'orderby' => 'date'
 	);
+	$cur_page = max( 1, get_query_var('paged') );
+	if ($cur_page > 1) {
+		$args["paged"] = $cur_page;
+	}
 	$the_query = new WP_Query( $args );
 	
 	// The Loop
@@ -113,7 +117,7 @@ function build_jobs_posts($attr) {
 		 } else {
 			 $format = '&paged=%#%';
 		 }
-		$structure = paginate_links(array(
+		$structure .= paginate_links(array(
 			'base'			=> str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
 			'format'		=> $format,
 			'current'		=> max( 1, get_query_var('paged') ),
