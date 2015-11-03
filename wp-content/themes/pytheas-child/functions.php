@@ -101,9 +101,29 @@ function build_jobs_posts($attr) {
 			$structure .= '</div>';
 		}
 	}
+	$structure .= '</div></div>';
+	/* This part of the code comes from: http://www.wpexplorer.com/pagination-wordpress-theme/ */
+	$total = $the_query->max_num_pages;
+	$big = 999999999; // need an unlikely integer
+	if( $total > 1 )  {
+		 if( !$current_page = get_query_var('paged') )
+			 $current_page = 1;
+		 if( get_option('permalink_structure') ) {
+			 $format = 'page/%#%/';
+		 } else {
+			 $format = '&paged=%#%';
+		 }
+		$structure = paginate_links(array(
+			'base'			=> str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+			'format'		=> $format,
+			'current'		=> max( 1, get_query_var('paged') ),
+			'total' 		=> $total,
+			'mid_size'		=> 3,
+			'type' 			=> 'list',
+		 ) );
+	}
 	/* Restore original Post Data */
 	wp_reset_postdata();
-	$structure .= '</div></div>';
 	
 	return $structure;
 }
