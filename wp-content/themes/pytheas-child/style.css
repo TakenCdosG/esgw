@@ -116,6 +116,7 @@ body { background-color: #E8E7DE; }
 #content table, #content td { border: 1px solid; }
 #content td { padding: 5px; line-height: 16px; text-align: center; }
 #content a { color: #0F489D; }
+#content a.page-numbers { color: #A73B1F; }
 #content .post-64 h3 { clear: both; }
 #post-72 .symple-box { height: 150px; }
 #post-72 .symple-box h3 { margin-top: 0; line-height: 20px; }
